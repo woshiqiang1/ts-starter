@@ -1,0 +1,10 @@
+.cache
+.DS_Store
+.idea
+.vscode
+dist
+logs
+node_modules
+temp
+*.log
+*.tgz

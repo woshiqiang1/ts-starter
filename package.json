@@ -1,0 +1,44 @@
+{
+  "name": "ts-starter",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.20.0",
+  "author": "Orange",
+  "license": "MIT",
+  "description": "my typescript project starter",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./*": "./*"
+  },
+  "files": [
+    "dist",
+    "*.d.ts"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "start": "tsx ./src/index.ts",
+    "stub": "unbuild --stub",
+    "build": "unbuild",
+    "prepublishOnly": "pnpm run build",
+    "release": "bumpp --tag --commit --push && pnpm publish"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "bumpp": "^9.0.0",
+    "eslint": "^8.35.0",
+    "eslint-config-alloy": "^4.9.0",
+    "tsx": "^3.12.3",
+    "typescript": "^4.9.5",
+    "unbuild": "^1.1.2"
+  }
+}
